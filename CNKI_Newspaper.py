@@ -1,3 +1,6 @@
+# @ author： Zhang Chunli
+# @ encoding: UTF-8
+# @ Email: zhangchunli711@foxmail.com
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -126,6 +129,10 @@ class CNKI_NewsPaper_Loader():
                     break
                 pass
             pass
+            # 当任务执行到最后一页的时候，就可以break了
+            if self.current_task_page >= self.all_task_page:
+                print("所有数据抓取完毕，检查抓取结果".center(60, "-"))
+                break
         pass
 
     # 下一个数据页
