@@ -4,7 +4,7 @@
 
 代码没有经过严格的全量测试，也就是并没有完整的完成过一个抓取任务，只是写完之后，让代码自己跑了十来分钟，有结果了，就不想继续搞下去了，也不是个人必须完成的工作，只是出于兴趣随便搞搞，如果有建议想讨论的，可以邮件
 
-![](C:\Users\zhang\AppData\Roaming\marktext\images\2022-11-28-13-05-15-image.png)
+![b29a8ca671813868a105a0f1706319b](https://user-images.githubusercontent.com/44056689/204200351-df62d2e6-dd3b-4d57-860f-42b86d430473.png)
 
 ## 代码说明
 
@@ -80,9 +80,7 @@ class CNKI_NewsPaper_Loader():
 **建立webdriver对象，打开页面，最大化窗口，然后执行登录任务（见下文）**
 
 （下图为打开界面）
-
-![](C:\Users\zhang\AppData\Roaming\marktext\images\2022-11-28-11-19-36-image.png)
-
+![2022-11-28-11-19-36-image](https://user-images.githubusercontent.com/44056689/204200501-61705db5-3b7c-4ac2-bb35-7371c9f3cb2d.png)
 
 
 ### loginTask()  loginUser()
@@ -133,7 +131,7 @@ def loginUser(self):
 
 **通过CSS选择器锁定不同dom的位置对内容进行填充和点击相关按钮，比较有好的一点是大部分dom都有ID选择器，就很好定位，比较舒服**
 
-![](C:\Users\zhang\AppData\Roaming\marktext\images\2022-11-28-12-45-54-image.png)
+![2022-11-28-12-45-54-image](https://user-images.githubusercontent.com/44056689/204200565-2d0a2bf6-cdcb-45d6-9639-dbf9b0c0b039.png)
 
 ### 检索任务retrievalTask()与检索retrieval()
 
