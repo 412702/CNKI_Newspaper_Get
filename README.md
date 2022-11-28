@@ -1,5 +1,7 @@
 # CNKI_NewsPaper Get
+
 通过UI自动化，抓取CNKI的报纸信息（抓取中国知网报纸数据），仅限测试和学习使用，请勿乱用
+
 ## 首先声明
 
 代码没有经过严格的全量测试，也就是并没有完整的完成过一个抓取任务，只是写完之后，让代码自己跑了十来分钟，有结果了，就不想继续搞下去了，也不是个人必须完成的工作，只是出于兴趣随便搞搞，如果有建议想讨论的，可以邮件
@@ -18,8 +20,6 @@
 
 由于CNKI有访问限制，所以只有一般对于购买了CNKI服务的高校才能实施这项操作，**同时**由于CNKI限制，需要机构账号在线的同时个人账号也要在线，所以还需要登录账号密码
 
-
-
 # 程序结构
 
 ### 依赖
@@ -27,7 +27,8 @@
 ```python
 # @ author： Zhang Chunli
 # @ encoding: UTF-8
-# @ Email: zhangchunli711@foxmail.comfrom selenium import webdriver
+# @ Email: zhangchunli711@foxmail.com
+from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
@@ -36,8 +37,6 @@ import random
 
 import pandas as pd
 ```
-
-
 
 ### 使用
 
@@ -81,7 +80,6 @@ class CNKI_NewsPaper_Loader():
 
 （下图为打开界面）
 ![2022-11-28-11-19-36-image](https://user-images.githubusercontent.com/44056689/204200501-61705db5-3b7c-4ac2-bb35-7371c9f3cb2d.png)
-
 
 ### loginTask()  loginUser()
 
@@ -211,7 +209,6 @@ def HTMLReaderList(self):
 **为避免抓取进度到一半直接被挂掉了，程序会记录抓取到了哪一个页面的哪一条，所以当刷新页面后就需要跳转到目标数据页**
 
 ```python
-
     def toTargetPage(self):
         print(f"数据页面跳转指定:{self.current_task_page}".center(50, "-"))
         if self.current_task_page == 0:
@@ -256,7 +253,7 @@ def HTMLReaderList(self):
                     self.current_task_page += 1
                     # 考虑抓一页保存一次
                     pd.DataFrame(data_res, columns=['tips', 'title', 'author', 'content']).to_csv(f"./GetResult/data_res_page_{str(self.current_task_page-1)}.csv")
-                    
+
                     self.toNextDataPage()
                     break
                 pass
